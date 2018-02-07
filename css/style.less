@@ -1,0 +1,116 @@
+body {
+    background-color: #e9fbf8
+}
+#customer_service_robot {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;    
+    border: 1px solid rgb(248, 222, 222);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transform: translate(-50%,-50%);
+    /* background: linear-gradient(30deg,#5274f0, #80fff8); */
+    background: #1f8ceb;
+    box-shadow: 2px 3px 3px rgba(0,0,0,0.4);
+    cursor: pointer; 
+    transition: all .5s;
+    z-index: 999;
+
+    #svg {
+        width: 30px;
+        border-radius: 20px 20px 0 20px;
+        height: 30px;
+        background: #fff;
+        transition: all .3s;
+    }
+
+    #customer_dialog {
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        background: #bdf4eb;
+        box-shadow: 0 0 2px 0 rgba(34,195,170,0.5);
+        transition: all .5s;
+        opacity: 0;
+        cursor: default;
+        border-radius: 20px;
+        overflow: hidden;
+
+        .customer-dialog-title {
+            line-height: 20px;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            background: #fff;
+            padding: 10px;
+        }
+        #customer_dialog_content {
+            font-size: 14px;
+            color: #666;
+            padding: 10px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            height: 430px;
+
+            &::-webkit-scrollbar {
+                display:none
+            }
+            span {
+                padding: 9px 14px;
+            }
+            div {
+                margin-bottom: 10px;
+                /* 清除浮动 */
+                &::after {
+                    clear:both;content:'.';
+                    display:block;
+                    width: 0;
+                    height: 0;
+                    visibility:hidden;
+                }
+            }
+            .msg-row-left {
+                border-radius: 0 20px 20px 20px;
+                float: left;
+                background: #fff;
+                color: #666;
+            }
+            .msg-row-right {
+                border-radius: 20px 20px 0 20px;
+                float: right;
+                background: linear-gradient(20deg, #3FD1E1 0%, #44D7CD 100%);
+                color: #fff;
+            }
+        }
+        .customer-dialog-choose {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            ul {
+                list-style: circle;
+                padding: 0;
+                margin: 0;
+                li {
+                    height: 100%;
+                    padding: 10px 20px;
+                    border-bottom: 1px solid #f3f3f3;
+                    color: #666;
+                    cursor: pointer;
+                    transition: all .3s;
+                    font-size: 14px;
+                    &:hover {
+                        background: #e9fbf8;
+                    }
+                }
+            }
+        }
+    }
+}
